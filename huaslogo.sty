@@ -1,7 +1,7 @@
 %%
-%% hasglogo.sty - Logos for HAS Groningen in PGF
+%% hauslogo.sty - Logos for HUAS Groningen in PGF
 %%
-%% Logos for Hanzeuniversity of Applied Science Groningen (HAS)
+%% Logos for Hanzeuniversity of Applied Science Groningen (HUAS)
 %% by Arjan Kloekhorst
 %%
 %% Copyright (c)2023, Arjan Kloekhorst
@@ -57,7 +57,7 @@
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \ProvidesPackage{huaslogo}[\filedate\space v\fileversion\space Logos
-for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
+for Hanze university of Applied Sciences Groningen (HUAS) (AK)]
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -68,13 +68,14 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 \@ifpackageloaded{pgf}{\PackageInfo{huaslogo}{Package pgf already loaded.}{\RequirePackage{tikz}
 \RequirePackage{pgf}
 \RequirePackage{keyval}
+\RequirePackage{xcolor}
 \RequirePackage{xkeyval}}}
 
 \AtBeginDocument{%
 \@ifpackageloaded{xcolor}{%
 \definecolor{huasorange}{RGB}{238,127,0}
-\PackageInfo{huaslogo}{Colors huasorange and huasblack setup}
-}{\PackageInfo{huaslogo}{Colors huasorange and huasblack not setup}}
+\PackageInfo{huaslogo}{Color huasorange setup}
+}{\PackageInfo{huaslogo}{Color huasorange not setup}}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -83,9 +84,9 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Orange = CYMK (0,60,100,0) RGB (238,127,0)
-% Black  = CYMK (0,0,0,100) RGB (35,31,32)
-% White  = 
+% Orange = CYMK (0,60,100,0) RGB (238,127,0) defined as huasorange
+% Black  = CYMK (0,0,0,100) RGB (0,0,0) Standard in xcolor
+% White  = CYMK (0,0,0,0) RGB (255,255,255) Standard in xcolor
 % 
 %
 %
@@ -96,12 +97,6 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%%%%%%%%%%%%%%%%%%%%% Test PGF key %%%%%%%%%%%%%%%%%
-%%%%
-
-
-%%
 
 %================== KEY DEFINITIONS ==================
 \define@key{huaslogo}{scale}{\def\pb@scale{#1}}
@@ -120,11 +115,11 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 \presetkeys{huaslogo}{scale = 1, logocolor = huasorange, textcolor = black, rotate = 0, opacity = 1}{}
 
 \presetkeys{huasSYTMTW}{scale = 1, SMcolor = huasorange, YTTWcolor = black, rotate = 0, opacity = 1}{}
+%preset of keys important, only set will result in bleed through of the settings. 
 
-
-\newcommand{\huaslogo}[1][]{%
-\define@boolkey{huaslogo}{EN}[true]{}
-\define@boolkey{huaslogo}{onlylogo}[true]{}
+\newcommand{\huaslogo}[1][]{%   Main command for \huaslogo
+\define@boolkey{huaslogo}{EN}[true]{} %Set boolean EN
+\define@boolkey{huaslogo}{onlylogo}[true]{} %Set boolean onlylogo
 \setkeys{huaslogo}{#1}% Set new keys
     
     \def \huasrotate{\pb@rotate}
@@ -147,8 +142,8 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 \fi}% 
 
 
-\newcommand{\huasSYTMTW}[1][]{%
-    \define@boolkey{huasSYTMTW}{square}[true]{}
+\newcommand{\huasSYTMTW}[1][]{% Main command for \huasSYTMTW
+    \define@boolkey{huasSYTMTW}{square}[true]{} % Set boolean for square
     \setkeys{huasSYTMTW}{#1}% Set new keys
     \def\huasrotate{\pb@SYTMTWrotate}
     \def\huasscale{\pb@SYTMTWscale}
