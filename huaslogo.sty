@@ -65,14 +65,14 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\@ifpackageloaded{pgf}{\PackageInfo{huaslogoPGF}{Package pgf already loaded.}}{\RequirePackage{pgf}
+\@ifpackageloaded{pgf}{\PackageInfo{huaslogo}{Package pgf already loaded.}{\RequirePackage{tikz}
+\RequirePackage{pgf}
 \RequirePackage{keyval}
-\RequirePackage{xkeyval}}
+\RequirePackage{xkeyval}}}
 
 \AtBeginDocument{%
 \@ifpackageloaded{xcolor}{%
-\definecolor{huasorange}{RGB}{244,114,22}
-\definecolor{huasblack}{RGB}{35,31,32}
+\definecolor{huasorange}{RGB}{238,127,0}
 \PackageInfo{huaslogo}{Colors huasorange and huasblack setup}
 }{\PackageInfo{huaslogo}{Colors huasorange and huasblack not setup}}
 }
@@ -83,8 +83,9 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Orange = CYMK (0,60,100,0) RGB (245,130,32)
-% Black = CYMK (0,0,0,100) RGB (35,31,32)
+% Orange = CYMK (0,60,100,0) RGB (238,127,0)
+% Black  = CYMK (0,0,0,100) RGB (35,31,32)
+% White  = 
 % 
 %
 %
@@ -116,9 +117,9 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 \define@key{huasSYTMTW}{opacity}{\def\pb@SYTMTWopacity{#1}}
 
 % ================= KEY Defaults =====================
-\presetkeys{huaslogo}{scale = 1, logocolor = huasorange, textcolor = huasblack, rotate = 0, opacity = 1}{}
+\presetkeys{huaslogo}{scale = 1, logocolor = huasorange, textcolor = black, rotate = 0, opacity = 1}{}
 
-\presetkeys{huasSYTMTW}{scale = 1, SMcolor = huasorange, YTTWcolor = huasblack, rotate = 0, opacity = 1}{}
+\presetkeys{huasSYTMTW}{scale = 1, SMcolor = huasorange, YTTWcolor = black, rotate = 0, opacity = 1}{}
 
 
 \newcommand{\huaslogo}[1][]{%
@@ -269,19 +270,19 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 \def\huaslogoEN@logocolor{% English logo
 \rotatebox{\huasrotate}{\scalebox{\huasscale}{\tikzifinpicture{}{\begin{pgfpicture}}
 \pgfsetfillopacity{\huasopacity}
-\pgfpathmoveto{\pgfqpoint{0cm}{0cm}}
-\pgfpathlineto{\pgfqpoint{4.551cm}{0cm}}
-\pgfpathlineto{\pgfqpoint{4.551cm}{1.023cm}}
-\pgfpathlineto{\pgfqpoint{0cm}{1.023cm}}
-\pgfpathclose
-\pgfusepath{clip}
+%\pgfpathmoveto{\pgfqpoint{0cm}{0cm}}
+%\pgfpathlineto{\pgfqpoint{4.551cm}{0cm}}
+%\pgfpathlineto{\pgfqpoint{4.551cm}{1.023cm}}
+%\pgfpathlineto{\pgfqpoint{0cm}{1.023cm}}
+%\pgfpathclose
+%\pgfusepath{clip}
 \begin{pgfscope}
-\pgfpathmoveto{\pgfqpoint{0cm}{0cm}}
-\pgfpathlineto{\pgfqpoint{4.551cm}{0cm}}
-\pgfpathlineto{\pgfqpoint{4.551cm}{1.023cm}}
-\pgfpathlineto{\pgfqpoint{0cm}{1.023cm}}
-\pgfpathclose
-\pgfusepath{clip}
+%\pgfpathmoveto{\pgfqpoint{0cm}{0cm}}
+%\pgfpathlineto{\pgfqpoint{4.551cm}{0cm}}
+%\pgfpathlineto{\pgfqpoint{4.551cm}{1.023cm}}
+%\pgfpathlineto{\pgfqpoint{0cm}{1.023cm}}
+%\pgfpathclose
+%\pgfusepath{clip}
 \begin{pgfscope}
 \pgfsetstrokecolor{huastext@color}\pgfsetfillcolor{huastext@color}
 \pgfpathmoveto{\pgfqpoint{1.299cm}{0.622cm}}
@@ -1377,19 +1378,19 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 \def\huaslogoNL@logocolor{% Dutch logo
 \rotatebox{\huasrotate}{\scalebox{\huasscale}{\tikzifinpicture{}{\begin{pgfpicture}}
 \pgfsetfillopacity{\huasopacity}
-\pgfpathmoveto{\pgfqpoint{0cm}{0cm}}
-\pgfpathlineto{\pgfqpoint{3.704cm}{0cm}}
-\pgfpathlineto{\pgfqpoint{3.704cm}{1.023cm}}
-\pgfpathlineto{\pgfqpoint{0cm}{1.023cm}}
-\pgfpathclose
-\pgfusepath{clip}
-\begin{pgfscope}
-\pgfpathmoveto{\pgfqpoint{0cm}{0cm}}
-\pgfpathlineto{\pgfqpoint{3.704cm}{0cm}}
-\pgfpathlineto{\pgfqpoint{3.704cm}{1.023cm}}
-\pgfpathlineto{\pgfqpoint{0cm}{1.023cm}}
-\pgfpathclose
-\pgfusepath{clip}
+%\pgfpathmoveto{\pgfqpoint{0cm}{0cm}}
+%\pgfpathlineto{\pgfqpoint{3.704cm}{0cm}}
+%\pgfpathlineto{\pgfqpoint{3.704cm}{1.023cm}}
+%\pgfpathlineto{\pgfqpoint{0cm}{1.023cm}}
+%\pgfpathclose
+%\pgfusepath{clip}
+%\begin{pgfscope}
+%\pgfpathmoveto{\pgfqpoint{0cm}{0cm}}
+%\pgfpathlineto{\pgfqpoint{3.704cm}{0cm}}
+%\pgfpathlineto{\pgfqpoint{3.704cm}{1.023cm}}
+%\pgfpathlineto{\pgfqpoint{0cm}{1.023cm}}
+%\pgfpathclose
+%\pgfusepath{clip}
 \begin{pgfscope}
 \pgfsetstrokecolor{huaslogo@color}\pgfsetfillcolor{huaslogo@color}
 \pgfpathmoveto{\pgfqpoint{1.081cm}{0.309cm}}
@@ -2686,7 +2687,7 @@ for Hanzeuniversity of Applied Science Groningen (HUAS) (AK)]
 \pgfpathlineto{\pgfqpoint{2.591cm}{0.405cm}}
 \pgfusepath{fill}
 \end{pgfscope}
-\end{pgfscope}
+%\end{pgfscope}
 \tikzifinpicture{}{\end{pgfpicture}}}}
 }
 
